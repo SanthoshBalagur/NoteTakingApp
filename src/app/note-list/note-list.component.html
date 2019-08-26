@@ -1,0 +1,48 @@
+<div class="sidebar">
+   <ul class= mobileView (click)="toggle()"  *ngIf="showdetails">
+    <div  class="mobileViewHambugger">
+        <span></span>
+        <span></span>
+        <span></span> 
+    </div>
+   
+  </ul>
+
+
+   <div class="listofactivities" *ngIf="!showdetails">
+      <ul *ngFor="let note of notes | async;let i = index">
+         <li class="liststyle" [class.selected]="note === selectednote" (click)="onSelect(note)">
+                <p class ="listelem1">{{note.title}}  
+                <span class="badge badge-secondary">
+                  {{ (lastUpdate | async) | date: 'mediumTime' }}
+                </span> 
+                </p>
+                <p class="listelem2">{{note.description}}</p>
+
+                <button class="delete" (click)="removeNote(note); $event.stopPropagation()">x </button>
+              </li>
+              
+        </ul>
+      </div>
+      
+  <!-- view the different sections according to actions performed on other sections -->
+      <div  class="view"  *ngIf="selectednote">
+          <p class="text-right">
+              <span class="badge badge-secondary">
+                Last Update: {{ (lastUpdate | async) | date: 'mediumTime' }} | Total notes: {{ (notes | async).length }}
+              </span>
+            </p>
+       <h2> Title:{{selectednote.title | uppercase}}</h2>
+          <div><span> <h2>Description:</h2> </span>
+            <p>{{selectednote.description}}</p>
+          </div>
+         
+        
+        </div>
+
+    </div>  
+  
+ 
+
+    
+

@@ -1,0 +1,117 @@
+.listofactivities{
+
+list-style-type: none;
+display: block ! important;
+overflow: hidden;
+border-right:1px solid black;
+height:100vh;
+width: 300px;
+text-align:left;
+
+
+}
+.liststyle{
+ margin-left:-41px;
+ padding:-2vh 1px 20px 1px;
+ border-bottom:1px solid black;
+ list-style-type: none;
+ }
+ button {
+    font-family: Arial;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    cursor: hand;
+}
+
+
+ button.delete {
+    float: right;
+   margin-top: -38px;
+   margin-right: .8em;
+    background-color: gray !important;
+    color: white;
+}
+
+.listelem1{
+    width: 600px;
+    float: left;
+    margin-left: 46px;
+}
+.listelem2{
+    margin-left: 53px;
+}
+
+
+.btnShowcreate{
+    margin-bottom: 700px;
+    margin-top: 20px;
+    margin-right:37px;
+    margin-left:20px;
+}
+
+ ul>li:hover {
+    background-color: lightgray;
+    cursor:pointer;
+
+  }
+  .sidebar{
+    display: flex;
+    text-align: center;
+}
+/* .mobileView{
+ grid-area:sidebar-mobile;
+text-align:left;
+border-right:1px solid black;
+list-style-type:none;
+} */
+.mobileViewHambugger{
+    display:block;
+padding-top:20px;
+padding-left:20px;
+}
+.mobileViewHambugger>span{
+    display:block;
+    width:33px;
+    height:4px;
+    margin-bottom:5px;
+    position:relative;
+    background-color: gray;
+    border-radius:3px;
+    z-index:1;
+   }
+/* @media only screen and (min-width: 800px) {
+    /* For mobile phones: */
+    /* .mobileView {
+        display: none;
+} */
+
+
+@media only screen and (min-width: 768px) {
+    /* For mobile phones: */
+    .mobileViewHambugger>span {
+        display: none;
+}
+[class*="listofactivities"]{
+    display:block 
+
+} 
+}
+
+@media only screen and (max-width: 768px) {
+    [class*="listofactivities"]{
+        display:none;
+
+    } /* For mobile phones: */
+}
+    
+.view{
+    margin:auto;
+}
+
+.flex-item{
+    flex-grow: 1;
+    grid-area:main;
+    margin-left: 60px
+}

@@ -1,0 +1,26 @@
+<div class= "sidebar" >
+    <div class="searchbar">
+<input type="text" 
+placeholder="Search by note title or note description" 
+#searchBox 
+id="search-box" 
+(keyup)="searchNote(searchBox.value)">
+</div>
+
+<div class="flex-item">
+<form (ngSubmit) ="onSubmit()" #noteForm="ngForm">
+        <label for="Title">
+          <span>Title</span>
+          <input  [(ngModel)]="model.title"  [ngModelOptions]="{standalone: true}" placeholder="title"  id="title" type="text" id="title" />
+        </label>
+        <label for="Description">
+          <span>Description</span>
+          <textarea    placeholder="Description"  id="description"
+          [(ngModel)]="model.description" name="description" #description="ngModel" rows="5"></textarea>        </label>
+        <button type="submit" class="btn btn-primary create">Create</button>
+
+      </form>
+    </div>
+        
+        
+</div>
